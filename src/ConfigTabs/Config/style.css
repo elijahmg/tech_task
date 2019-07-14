@@ -1,0 +1,14 @@
+.configWrap {
+  margin: 20px 0 0 10px;
+}
+
+.buttonWrap {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0;
+  width: 400px;
+}
+
+.textField {
+  width: 400px;
+}
