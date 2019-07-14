@@ -10,7 +10,7 @@ In this project you can create form with JSON object configuration
 
 Used for name of the form
 
-###items (Array)
+### items (Array)
 
 Content object with following parameters
 
@@ -71,6 +71,6 @@ This property is using for configure form submit buttons
 }
 ~~~
 
-####Caution
+### Caution
 
 All properties are case sensitive! 
