@@ -1,5 +1,9 @@
 Created by I.F
 
+### Live demo
+
+https://elijahmg.github.io/tech_task/
+
 ## Crate form from JSON configuration
 
 In this project you can create form with JSON object configuration
