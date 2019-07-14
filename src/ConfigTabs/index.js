@@ -12,33 +12,33 @@ class ConfigTabs extends Component {
     jsonConfig: {},
   };
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.saveObjAndChangeTab = this.saveObjAndChangeTab.bind(this);
   }
 
-
   saveObjAndChangeTab(objAsStaring) {
-    // console.log('objAsStaring', objAsStaring);
     const jsonString = objAsStaring
       .replace(/'/g, '')
-      .replace(/([A-Za-z])\w+/g, (g) => `"${g}"`);
-    console.log('objAsStaring', jsonString);
+      .replace(/(\w+\s*\w+)/g, (g) => `"${g}"`);
+
     const jsonConfig = JSON.parse(jsonString);
 
     this.setState({ value: 1, jsonConfig });
   }
 
   render() {
-    const { value, jsonConfig} = this.state;
+    const { value, jsonConfig } = this.state;
 
     return (
-      <div className="wrap">
-        <Tabs value={value} onChange={(e, newValue) => this.setState({ value: newValue })} component="div">
-          <Tab label="Config"/>
-          <Tab label="Result"/>
-        </Tabs>
+      <div>
+        <div className="wrapTabHeader">
+          <Tabs value={value} onChange={(e, newValue) => this.setState({ value: newValue })} component="div">
+            <Tab label="Config"/>
+            <Tab label="Result"/>
+          </Tabs>
+        </div>
         <div>
           {value === 0 && <Config saveObjAndChangeTab={this.saveObjAndChangeTab}/>}
           {value === 1 && <Result obj={jsonConfig}/>}

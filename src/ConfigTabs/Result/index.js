@@ -9,7 +9,7 @@ class Result extends Component {
   };
 
   formButtons(value) {
-    return <input type="submit" value={value} />
+    return <input type="submit" value={value} className="submit"/>
   }
 
   field(item) {
@@ -25,7 +25,9 @@ class Result extends Component {
       case 'textarea':
         return (
           <div className="wrapField">
-            <span>{label}</span>
+            <div className="label">
+              <span className="label">{label}</span>
+            </div>
             <textarea/>
           </div>
         );
@@ -47,7 +49,9 @@ class Result extends Component {
 
     return (
       <div className="wrapField">
-        <span>{label}</span>
+        <div className="label">
+          <span>{label}</span>
+        </div>
         <input type={fieldType} name="radio"/>
       </div>
     );
@@ -73,10 +77,12 @@ class Result extends Component {
 
     return (
       <div className="resultWrap">
-        <legend>{headerLabel}</legend>
-        <form>
-          {Object.keys(obj).map((key) => this.config(key))}
-        </form>
+        <fieldset>
+          <legend>{headerLabel}</legend>
+          <form onSubmit={() => null}>
+            {Object.keys(obj).map((key) => this.config(key))}
+          </form>
+        </fieldset>
       </div>
     );
   }

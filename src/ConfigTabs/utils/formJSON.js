@@ -1,5 +1,5 @@
 const test = {
-  headerLabel: 'Firstform',
+  headerLabel: 'First form',
   items: [
     {
       type: 'numberfield',
@@ -19,7 +19,7 @@ const test = {
     },
     {
       type: 'checkbox',
-      label: 'IsEditable'
+      label: 'Is Editable'
     },
     {
       type: 'radioButtons',
